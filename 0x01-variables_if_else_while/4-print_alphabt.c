@@ -3,10 +3,9 @@
 #include <stdio.h>
 
 /**
- * main - entry
- * return - 0 always
+ * main - Everything works here
+ * return - Must always come back on 0
  */
-
 int main(void)
 {
 	char j = 'a';
