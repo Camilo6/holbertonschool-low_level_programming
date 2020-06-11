@@ -4,12 +4,12 @@
  *
  * return - Must always come back on 0
  */
-
 int main(void)
 {
-	int j;
-	for (j = 0; i < 10; j++)
-		pritnf("%d", j);
+	int i;
+
+	for (i = 0; i < 10; i++)
+		printf("%d", i);
 	printf("\n");
 	return (0);
 }
