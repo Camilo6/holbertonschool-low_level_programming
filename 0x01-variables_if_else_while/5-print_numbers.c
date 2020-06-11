@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Everything works here
  *
@@ -8,11 +7,12 @@
 
 int main(void)
 {
-	int j = 0;
+	int j;
 
-	while  (j < 10)
+	for (j = 0; i < 10; j++)
 	{
-		pritnf(j);
-		j = j + 1;
+		pritnf("%d", j);
 	}
+	printf("\n");
+	return (0);
 }
