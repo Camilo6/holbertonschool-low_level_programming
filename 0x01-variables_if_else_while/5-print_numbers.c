@@ -2,8 +2,8 @@
 /**
  * main - Everything works here
  *
- * return - Must always come back on 0
- */
+ * Return: must always come back on 0
+ **/
 int main(void)
 {
 	int i;
