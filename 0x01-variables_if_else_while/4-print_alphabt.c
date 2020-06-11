@@ -4,7 +4,8 @@
 
 /**
  * main - Everything works here
- * return - Must always come back on 0
+ *
+ * Return: Must always come back on 0
  */
 int main(void)
 {
