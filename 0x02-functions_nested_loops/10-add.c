@@ -2,11 +2,14 @@
 
 /**
  * add - Sum of two integers
- * @A: Integer A
- * @B: Integer B
+ *
+ * @j: Integer
+ *
+ * @c: Integer
+ *
  * Return: Always 0.
  */
-int add(int A, int B)
+int add(int j, int c)
 {
-	return (A + B);
+	return (j + c);
 }
