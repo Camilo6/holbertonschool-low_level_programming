@@ -8,7 +8,7 @@
 
 void print_alphabet(void)
 {
-	char a;
+	int a;
 
 	a = 'a';
 
