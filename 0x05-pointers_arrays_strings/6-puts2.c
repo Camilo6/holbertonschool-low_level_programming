@@ -2,10 +2,7 @@
 
 /**
  * puts2 - prints string +2
- *
  * @str: string
- *
- *
  */
 
 void puts2(char *str)
