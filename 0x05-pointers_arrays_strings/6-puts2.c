@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * puts2 - prints string +2
- * @str: string
+ * puts2 - prints a string +2
+ * @str: character
  */
 void puts2(char *str)
 {
