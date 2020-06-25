@@ -19,5 +19,5 @@ char *_strncpy(char *dest, char *src, int n)
 	for (; c < n; c++)
 		dest[c] = '\0';
 
-	return(dest);
+	return (dest);
 }
