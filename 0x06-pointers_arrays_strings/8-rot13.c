@@ -15,7 +15,7 @@ char *rot13(char *n)
 
 	for (cont = 0; n[cont] != 0; cont++)
 	{
-		for (cont2 = 0; cont2 < aux; cont2++)
+		for (cont2 = 0; cont2 < x; cont2++)
 		{
 			if (n[cont] == abc[cont2])
 			{
