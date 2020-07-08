@@ -1,42 +1,40 @@
-include <stdlib.h>
-
+#include <stdlib.h>
+#include "holberton.h"
 /**
- * str_concat - function that concatenates two strings.
- * @s1: input char 1
- * @s2: input char 2
- * Return: char
+ * str_concat - a function that concatenates two strings
+ * @s1: character string
+ * @s2: character string
+ * Return: pointer that points to a newly allocated space in memory
+ *The function should return NULL on failure
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *cat;
-	char *nul = "";
-	unsigned int i, j, x, y;
+	char *a;
+	int i;
+	int j;
+	int c;
+	int d;
 
-	i = j = x = y = 0;
 	if (s1 == NULL)
-		s1 = nul;
+	{
+		s1 = "";
+	}
 	if (s2 == NULL)
-		s2 = nul;
-	while (s1[i] != '\0')
-		i += 1;
-	while (s2[j] != '\0')
-		j += 1;
-	j += 1;
-	cat = malloc((i + j) * sizeof(*cat));
-	if (cat == NULL)
-		return (NULL);
-	while (s1[x] != '\0')
 	{
-		cat[x] = s1[x];
-		x += 1;
+		s2 = "";
 	}
-	while (s2[y] != '\0')
+	for (i = 0; s1[i] != '\0'; i++)
+		;
+	for (j = 0; s2[j] != '\0'; j++)
+		;
+	a = malloc((i * sizeof(*s1)) + (j * sizeof(*s2)) + 1);
+	for (c = 0, d = 0; c < (i + j + 1); c++)
 	{
-		cat[x] = s2[y];
-		y += 1;
-		x += 1;
+		if (c < i)
+			a[c] = s1[c];
+		else
+			a[c] = s2[d++];
 	}
-	cat[x] = '\0';
-	return (cat);
+	return (a);
 }
