@@ -21,6 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	if (c == NULL)
 	{
+		free(c);
 		return (NULL);
 	}
 
