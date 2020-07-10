@@ -51,16 +51,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 }
 
 /**
- * string lenght function
+ * _strlen -  returns the length of a string.
+ *
+ * @s: character
+ *
+ * Return: length of a string
  */
- int _strlen(char *s)
- {
-	 int a;
+int _strlen(char *s)
+{
+	int a;
 
-	 a = 0;
-	 while (s[a] != '\0')
-	 {
-		 a++;
-	 }
-	 return (a);
- }
+	a = 0;
+	while (s[a] != '\0')
+	{
+		a++;
+	}
+	return (a);
+}
