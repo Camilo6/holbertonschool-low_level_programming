@@ -3,44 +3,45 @@
 #include <stdlib.h>
 
 /**
- * str_concat - a function that concatenates two strings
- * @s1: character string
- * @s2: character string
- * Return: pointer that points to a newly allocated space in memory
- *The function should return NULL on failure
+ * argstostr - arguments to strings
+ * Return: string
+ * @ac: assf
+ * @av: afsff
  */
 
-int i, j, len = 0;
-int k = 0;
-char *str;
-
-if (ac == 0 || av == '\0')
-	return ('\0');
-
-for (i = 0; i < ac ; i++)
+char *argstostr(int ac, char **av)
 {
-	len += _strlen(av[i]);
-}
+	int i, j, len = 0;
+	int k = 0;
+	char *str;
 
-len = len + ac;
-str = malloc(sizeof(char) * len + 1);
+	if (ac == 0 || av == '\0')
+		return ('\0');
 
-if (str == '\0')
-{ return ('\0'); }
+	for (i = 0; i < ac ; i++)
+	{
+		len += _strlen(av[i]);
+	}
 
-for (i = 0; i < ac; i++)
-{
-	for (j = 0; j < _strlen(av[i]); j++)
+	len = len + ac;
+	str = malloc(sizeof(char) * len + 1);
+
+	if (str == '\0')
+	{ return ('\0'); }
+
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; j < _strlen(av[i]); j++)
 	{
 		str[k] = av[i][j];
 		k++;
 	}
 	str[k] = '\n';
 	k++;
-}
+	}
 
-str[k] = '\0';
-return (str);
+	str[k] = '\0';
+	return (str);
 }
 
 /**
