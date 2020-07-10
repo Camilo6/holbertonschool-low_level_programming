@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
-
+int _strlen(char *s);
 /**
  * string_nconcat -  concatenates two strings.
  * @s1: string char
@@ -12,34 +12,55 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s;
-	unsigned int i;
-	unsigned int j;
-	unsigned int c;
-	unsigned int d;
+	unsigned int i, c;
+	unsigned int j, d;
 
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
 
-	for (c = 0; *(s1 + c); c++)
-		;
-	for (d = 0; *(s2 + d); d++)
-		;
-	d++;
+	c = _strlen(s1);
+	d = _strlen(s2);
 
-	if (n > d)
-		s = malloc((c + d) * sizeof(*s));
-	else
-		s = malloc((c + n + 1) * sizeof(*s));
+	if (n >= d)
+	{
+		n = d;
+	}
+
+	s = malloc((c + n) * sizeof(char) + 1);
+
 	if (s == NULL)
+	{
+		free(s);
 		return (NULL);
+	}
 
 	for (i = 0; i < c; i++)
-		*(s + i) = *(s1 + i);
-	for (j = 0; j < d && j < n; i++, j++)
-		*(s + i) = *(s2 + j);
-	*(s + i) = '\0';
+	{
+		s[i] = s1[i];
+	}
 
+	for (j = 0; j < n; j++)
+	{
+		s[i] = s2[j];
+		j++;
+	}
+	s[i] = '\0';
 	return (s);
 }
+
+/**
+ * string lenght function
+ */
+ int _strlen(char *s)
+ {
+	 int a;
+
+	 a = 0;
+	 while (s[a] != '\0')
+	 {
+		 a++;
+	 }
+	 return (a);
+ }
