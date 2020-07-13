@@ -1,4 +1,4 @@
-#ifndef LIKE_THE_MACRO
-#define LIKE_THE_MACRO
+#ifndef THREE_FUNCTION_LIKE_MACRO_H
+#define THREE_FUNCTION_LIKE_MACRO_H
 #define ABS(x) (x > 0 ? x : x * -1)
-#endif /* LIKE_THE_MACRO */
+#endif /* THREE_FUNCTION_LIKE_MACRO_H */
