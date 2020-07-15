@@ -10,30 +10,27 @@
 
 int main(int argc, char *argv[])
 {
-	int a;
-	int b;
-	int (*op)(int a, int b);
+	int a, b;
+	int (*o)(int, int);
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	op = get_op_func(argv[2]);
-	if (op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-
-	printf("%d\n", op(a, b));
+	o = get_op_func(argv[2]);
+	if (o == NULL || (argv[2][1] != '\0'))
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	if ((argv[2][0] == '/' || argv[2][0] == '%') && argv[3][0] == '0')
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	printf("%d\n", o(a, b));
 	return (0);
 }
