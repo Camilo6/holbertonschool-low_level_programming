@@ -1,11 +1,9 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 #include <stdio.h>
-
 /**
  * print_all - prints all arguments, seperated by char *separator
  * @format: list of all types of arguments
- *
  * Return: Void
  */
 void print_all(const char * const format, ...)
@@ -37,9 +35,7 @@ void print_all(const char * const format, ...)
 		case 's':
 			tm = va_arg(args, char*);
 			if (tm == NULL)
-			{
 				tm = "(nil)";
-			}
 			printf("%s%s", s, tm);
 			break;
 		default:
