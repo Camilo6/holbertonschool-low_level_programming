@@ -6,13 +6,15 @@
  */
 void free_listint2(listint_t **head)
 {
+	listint_t *space;
+
 	if (head == NULL)
+		return; /* check if list is empty */
+
+	while (*head != NULL)
 	{
-		return;
-	}
-	while (head != NULL)
-	{
-		free(*head);
+		space = *head;
 		*head = (*head)->next;
+		free(space);
 	}
 }
