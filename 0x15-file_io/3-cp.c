@@ -30,7 +30,7 @@ int main(int ac, char *av[])
 		r = read(file, buffer, 1024);
 		if (r == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-		if (r > 0)
+		else
 		{
 			w = write(file1, buffer, r);
 			if (w == -1)
@@ -39,13 +39,9 @@ int main(int ac, char *av[])
 	}
 	c = close(file);
 	if (c == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file), exit(100);
-	}
 	c1 = close(file1);
 	if (c1 == -1)
-	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), exit(100);
-	}
 	return (0);
 }
