@@ -11,7 +11,7 @@ int main(int ac, char *av[])
 	ssize_t r, w;
 	char buffer[1024];
 
-	if (ac!= 3)
+	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	}
