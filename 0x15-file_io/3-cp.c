@@ -7,8 +7,8 @@
  */
 int main(int ac, char *av[])
 {
-	int file, file1, c, c1;
-	int r = 1, w = 1;
+	int file, file1, c;
+	ssize_t r = 1, w = 1;
 	char buffer[2048];
 
 	if (ac != 3)
@@ -40,8 +40,8 @@ int main(int ac, char *av[])
 	c = close(file);
 	if (c == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file), exit(100);
-	c1 = close(file1);
-	if (c1 == -1)
+	c = close(file1);
+	if (c == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), exit(100);
 	return (0);
 }
