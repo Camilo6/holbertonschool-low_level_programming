@@ -30,7 +30,7 @@ int main(int ac, char *av[])
 		r = read(file, buffer, 1024);
 		if (r == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
-		else
+		if (r > 0)
 		{
 			w = write(file1, buffer, r);
 			if (w == -1)
