@@ -11,6 +11,7 @@ int main(int ac, char *av[])
 {
 
 	int file, file1, c, c1;
+	ssize_t r;
 	char buffer[10048];
 
 	if (ac != 3)
@@ -32,8 +33,8 @@ int main(int ac, char *av[])
 		exit(99);
 	}
 	/** Leemos y escribimos */
-	read(file, buffer, 1024);
-	write(file1, buffer, 1024);
+	r = read(file, buffer, 1024);
+	write(file1, buffer, r);
 	/** closing */
 	c = close(file);
 	if (c == -1)
