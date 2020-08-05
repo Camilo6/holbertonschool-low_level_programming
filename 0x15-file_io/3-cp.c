@@ -8,7 +8,7 @@
 int main(int ac, char *av[])
 {
 	int file, file1;
-	int r, w;
+	ssize_t r, w;
 	char buffer[1024];
 
 	if (ac!= 3)
