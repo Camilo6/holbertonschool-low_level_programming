@@ -7,7 +7,7 @@
  */
 int main(int ac, char *av[])
 {
-	int file, file1, c;
+	int file, file1;
 	ssize_t r = 1, w = 1;
 	char buffer[1024];
 
@@ -37,11 +37,11 @@ int main(int ac, char *av[])
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
-	c = close(file);
-	if (c == -1)
+	w = close(file);
+	if (w == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file), exit(100);
-	c = close(file1);
-	if (c == -1)
+	w = close(file1);
+	if (w == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), exit(100);
 	return (0);
 }
