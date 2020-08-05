@@ -8,7 +8,7 @@
 int main(int ac, char *av[])
 {
 	int file, file1, c;
-	ssize_t r = 1, w = 1;
+	ssize_t r, w;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -25,6 +25,7 @@ int main(int ac, char *av[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", av[2]), exit(99);
 	}
+	r = w = 1;
 	while (r)
 	{
 		r = read(file, buffer, 1024);
