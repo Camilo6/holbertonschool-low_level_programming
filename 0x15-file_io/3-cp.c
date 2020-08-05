@@ -8,7 +8,7 @@
 int main(int ac, char *av[])
 {
 	int file, file1;
-	ssize_t r, w;
+	ssize_t r, w, c, c1;
 	char buffer[1024];
 
 	if (ac != 3)
@@ -40,11 +40,11 @@ int main(int ac, char *av[])
 					"Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
-	w = close(file);
-	if (w == -1)
+	c = close(file);
+	if (c == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file), exit(100);
-	w = close(file1);
-	if (w == -1)
+	c1 = close(file1);
+	if (c1 == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file1), exit(100);
 	return (0);
 }
