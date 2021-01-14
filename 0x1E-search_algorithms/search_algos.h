@@ -1,4 +1,4 @@
- #ifndef SEARCH_ALGOR
+#ifndef SEARCH_ALGOR
 #define SEARCH_ALGOR
 
 
